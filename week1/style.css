@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* 부모가 flex여야 속성값이 먹힌다 */
+main {
+  display: flex;
+}
+aside.sideBar {
+  flex: 1;
+}
+
+aside.cart {
+  flex: 1.5;
+}
+section.song {
+  flex: 3;
+
+  width: 100%;
+  display: flex;
+  /* 줄바꿈 */
+  flex-wrap: wrap;
+  /* 간격 조정 flex에서 진행해야 한다 */
+  gap: 15px;
+}
+article.songCard {
+  display: flex;
+  background-color: lightgoldenrodyellow;
+  border: 1px solid yellow;
+  border-radius: 8px;
+  /* 원래는 cal로 조정하는 것인데 야매로 */
+  width: 45%;
+}
+
+article.songCard > img {
+  width: 150px;
+}
+aside.cart {
+}
