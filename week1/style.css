@@ -1,12 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Do Hyeon", sans-serif;
 }
 /* 부모가 flex여야 속성값이 먹힌다 */
 main {
   display: flex;
 }
+header {
+  background-color: rgb(255, 181, 191);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+header h1 {
+  font-size: 20px;
+  padding: 10px;
+}
+
 aside.sideBar {
   flex: 1;
 }
@@ -47,11 +60,33 @@ article .burger__desc {
 
 aside .cart__content {
   position: fixed;
-  /* right: 20%; */
-  width: 100%;
+  background-color: rgb(203, 250, 250);
+  border-radius: 10px;
+
+  right: 20px;
+  width: 25%;
+  padding: 10px;
+}
+aside .cart__list {
+  flex: 3;
 }
 
 hr {
-  width: 20%;
+  width: 100%;
   size: 10px;
+  margin-bottom: 10px;
+  margin-top: 10%;
+  background-color: white;
+}
+
+aside .cart__button {
+  display: flex;
+  justify-content: center;
+}
+aside .cart__button button {
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(170, 177, 241, 0.966);
+  border: 0px solid;
 }
