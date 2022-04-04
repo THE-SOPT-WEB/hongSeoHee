@@ -67,8 +67,13 @@ article.burger__card {
   background-color: white;
   border: 1px solid black;
   border-radius: 8px;
+  box-shadow: 5px 5px 5px gray;
   /* 원래는 cal로 조정하는 것인데 야매로  */
   width: 48%;
+  margin: 10px 0px;
+}
+article.burger__card:hover {
+  background-color: rgb(240, 186, 179);
 }
 article .burger__content {
   padding: 5%;
