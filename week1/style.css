@@ -5,10 +5,12 @@
   padding: 0;
   font-family: "Do Hyeon", sans-serif;
 }
+
 /* 부모가 flex여야 속성값이 먹힌다 */
 main {
   display: flex;
 }
+
 /* 헤더 CSS */
 header {
   background-color: rgb(255, 181, 191);
@@ -17,9 +19,10 @@ header {
   margin-bottom: 10px;
 }
 header h1 {
-  font-size: 20px;
-  padding: 10px;
+  font-size: 30px;
+  padding: 25px;
 }
+
 /* 다른거 먹자 CSS */
 aside.sideBar {
   flex: 1;
@@ -51,6 +54,7 @@ li.mcdonald {
 li.burgerking {
   background-color: rgba(184, 186, 200, 0.966);
 }
+
 /* 버거 관련 CSS */
 section.burger {
   flex: 3.5;
@@ -121,4 +125,33 @@ aside .cart__button button {
   border-radius: 10px;
   background-color: rgba(170, 177, 241, 0.966);
   border: 0px solid;
+}
+
+/* media쿼리 */
+@media (min-width: 1110px) {
+  aside#headerSideBar {
+    display: none;
+  }
+}
+
+@media (max-width: 1110px) {
+  aside#mainSideBar {
+    display: none;
+  }
+  aside#headerSideBar .sideBar__content {
+    position: absolute;
+    background-color: transparent;
+    width: 80px;
+  }
+  article.burger__card {
+    width: 45%;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 940px) {
+  article.burger__card {
+    width: 95%;
+    margin-left: 10%;
+  }
 }
