@@ -17,8 +17,16 @@ header {
   margin-bottom: 10px;
   background-color: rgb(255, 181, 191);
 }
-.sideBar {
+.sideNav {
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px;
+  height: fit-content;
+  margin: 0px 20px;
+  border-radius: 10px;
+  background-color: rgb(203, 250, 250);
 }
 .burger {
   display: flex;
@@ -40,22 +48,12 @@ header > h1 {
 }
 
 /* 다른거 먹자 CSS */
-
-.sideBar__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 10px;
-  margin: 0px 20px;
-  border-radius: 10px;
-  background-color: rgb(203, 250, 250);
-}
-.sideBar__content ul {
+.sideNav__list {
   list-style: none;
   font-size: 13px;
   width: 100%;
 }
-.sideBar__content li {
+.sideNav__list li {
   display: flex;
   justify-content: center;
   padding: 5px 0px;
