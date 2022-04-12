@@ -7,34 +7,48 @@
 }
 
 /* 부모가 flex여야 속성값이 먹힌다 */
+/* display, position 같은 속성 맨위에 써주기 피드백 반영 */
 main {
   display: flex;
 }
-
-/* 헤더 CSS */
 header {
-  background-color: rgb(255, 181, 191);
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+  background-color: rgb(255, 181, 191);
 }
-header h1 {
+.sideBar {
+  flex: 1;
+}
+.burger {
+  display: flex;
+  flex: 3.5;
+  width: 100%;
+  /* 줄바꿈 */
+  flex-wrap: wrap;
+  /* 간격 조정 flex에서 진행해야 한다 */
+  gap: 15px;
+}
+.cart {
+  flex: 1.5;
+}
+
+/* 헤더 CSS */
+header > h1 {
   font-size: 30px;
   padding: 25px;
 }
 
 /* 다른거 먹자 CSS */
-aside.sideBar {
-  flex: 1;
-}
-aside .sideBar__content {
-  background-color: rgb(203, 250, 250);
-  border-radius: 10px;
+
+.sideBar__content {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin: 0px 20px;
+  align-items: center;
   padding: 10px 10px;
+  margin: 0px 20px;
+  border-radius: 10px;
+  background-color: rgb(203, 250, 250);
 }
 .sideBar__content ul {
   list-style: none;
@@ -42,11 +56,11 @@ aside .sideBar__content {
   width: 100%;
 }
 .sideBar__content li {
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   padding: 5px 0px;
   margin: 10px 0px;
+  border-radius: 10px;
 }
 li.mcdonald {
   background-color: rgba(170, 177, 241, 0.966);
@@ -56,74 +70,61 @@ li.burgerking {
 }
 
 /* 버거 관련 CSS */
-section.burger {
-  flex: 3.5;
-
-  width: 100%;
+.burger__card {
   display: flex;
-  /* 줄바꿈 */
-  flex-wrap: wrap;
-  /* 간격 조정 flex에서 진행해야 한다 */
-  gap: 15px;
-}
-article.burger__card {
-  display: flex;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 8px;
-  box-shadow: 5px 5px 5px gray;
-  /* 원래는 cal로 조정하는 것인데 야매로  */
   width: 48%;
   margin: 10px 0px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 5px 5px 5px gray;
 }
-article.burger__card:hover {
+.burger__card:hover {
   background-color: rgb(240, 186, 179);
 }
-article .burger__content {
+.burger__content {
   padding: 5%;
 }
 
-article.burger__card > img {
+.burger__card > img {
   width: 150px;
 }
-article .burger__desc {
+.burger__desc {
   font-size: 10px;
 }
 
 /* 장바구니 CSS */
-aside.cart {
-  flex: 1.5;
-}
-aside .cart__content {
-  background-color: rgb(203, 250, 250);
-  border-radius: 10px;
+
+.cart__content {
   position: sticky;
   top: 20px;
   width: 80%;
   padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(203, 250, 250);
 }
-aside .cart__list {
+.cart__content-wrapper {
+  padding: 10px 0px;
+  border-bottom: 3px solid white;
+}
+.cart__list {
   flex: 3;
 }
 
-hr {
-  width: 100%;
-  size: 10px;
-  margin-bottom: 10px;
-  margin-top: 10%;
-  background-color: white;
+.cart__priceCount::after {
+  content: "원";
 }
-
-aside .cart__button {
+.cart__button {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
-aside .cart__button button {
-  margin: 0px 5px;
+.cart__button button {
   padding: 5px;
+  margin: 0px 5px;
+  border: 0px solid;
   border-radius: 10px;
   background-color: rgba(170, 177, 241, 0.966);
-  border: 0px solid;
 }
 
 /* media쿼리 */
