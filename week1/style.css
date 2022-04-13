@@ -107,6 +107,7 @@ li.burgerking {
 }
 .cart__list {
   flex: 3;
+  list-style: none;
 }
 
 .cart__price::after {
