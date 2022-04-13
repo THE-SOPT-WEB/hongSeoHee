@@ -39,7 +39,7 @@ function addCartList(e) {
 
   li.classList.add(className);
   li.innerHTML = `${burgerInfo.name}
-            <input class=${className} type="number" name="burgerCount" value="1" min="1">
+            <input class=${className} type="number" name="burgerCount" value="1" min="1" >
             ${burgerInfo.price}
             <button class=${className}>X</button>`;
   cartList.appendChild(li);
