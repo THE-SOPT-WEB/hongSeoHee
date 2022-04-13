@@ -1,6 +1,7 @@
 let burgerCardList = document.querySelectorAll(".burger__card");
 let cartPrice = document.querySelector(".cart__price");
 let cartList = document.querySelector(".cart__list");
+
 const parsePriceToNumber = (price) => {
   const removedComma = price.replace(/\D/g, "");
   return +removedComma;
@@ -36,13 +37,23 @@ function addCartList(e) {
   };
   const li = document.createElement("li");
   const className = "buger" + burgerInfo.name.replaceAll(" ", "");
+  const classList = [];
+  const burgerLists = cartList.children;
 
-  li.classList.add(className);
-  li.innerHTML = `${burgerInfo.name}
+  for (let i = 0; i < burgerLists.length; i += 1) {
+    classList.push(burgerLists[i].className);
+  }
+  if (classList.includes(className)) {
+    const inputNode = document.querySelectorAll(`.${className}`)[1];
+    inputNode.value = +inputNode.value + 1;
+  } else {
+    li.classList.add(className);
+    li.innerHTML = `${burgerInfo.name}
             <input class=${className} type="number" name="burgerCount" value="1" min="1" >
             ${burgerInfo.price}
             <button class=${className}>X</button>`;
-  cartList.appendChild(li);
+    cartList.appendChild(li);
+  }
   const eventNodes = document.querySelectorAll(`.${className}`);
   // 버거 수량 위아래 조정
   eventNodes[1].addEventListener("change", changeBurgerCount);
