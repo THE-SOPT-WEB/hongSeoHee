@@ -109,7 +109,7 @@ li.burgerking {
   flex: 3;
 }
 
-.cart__priceCount::after {
+.cart__price::after {
   content: "원";
 }
 .cart__button {
