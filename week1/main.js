@@ -1,11 +1,23 @@
 let burgerCardList = document.querySelectorAll(".burger__card");
 let cartPrice = document.querySelector(".cart__price");
 let cartList = document.querySelector(".cart__list");
+const parsePriceToNumber = (price) => {
+  const removedComma = price.replace(/\D/g, "");
+  return +removedComma;
+};
 function changeBurgerCount(e) {
-  console.log(e);
+  console.log(e.target.parentNode);
 }
 function removeBurger(e) {
-  console.log(e.target);
+  // 선택한 버거 리스트, 수량, 가격 가져와서 가격 변경 후 li 자체를 삭제
+  const burgerLi = e.target.parentNode;
+  const burgetCount = burgerLi.childNodes[1].value;
+  const burgerPrice = burgerLi.childNodes[2].data;
+  cartPrice.innerHTML = (
+    parsePriceToNumber(cartPrice.innerHTML) -
+    burgetCount * parsePriceToNumber(burgerPrice)
+  ).toLocaleString();
+  burgerLi.remove();
 }
 
 function addCartList(e) {
@@ -15,7 +27,7 @@ function addCartList(e) {
     price: selectBurgerCard.querySelector(".burger__price").innerText,
   };
   const li = document.createElement("li");
-  const className = burgerInfo.name.replaceAll(" ", "");
+  const className = "buger" + burgerInfo.name.replaceAll(" ", "");
 
   li.classList.add(className);
   li.innerHTML = `${burgerInfo.name}
@@ -28,6 +40,10 @@ function addCartList(e) {
   eventNodes[1].addEventListener("change", changeBurgerCount);
   // 버거 삭제 버튼
   eventNodes[2].addEventListener("click", removeBurger);
+  cartPrice.innerHTML = (
+    parsePriceToNumber(burgerInfo.price) +
+    parsePriceToNumber(cartPrice.innerHTML)
+  ).toLocaleString();
 }
 
 burgerCardList.forEach((burgerCard) => {
