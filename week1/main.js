@@ -5,17 +5,25 @@ const parsePriceToNumber = (price) => {
   const removedComma = price.replace(/\D/g, "");
   return +removedComma;
 };
-function changeBurgerCount(e) {
-  console.log(e.target.parentNode);
+function changeBurgerCount() {
+  // 장바구니에 있는 모든 버거 리스트, 수량, 가격 가져와서 전체 금액 다시 계산 후 금액 수정
+  const burgerLists = cartList.children;
+  let sum = 0;
+  for (let i = 0; i < burgerLists.length; i += 1) {
+    const burgerCount = burgerLists[i].childNodes[1].value;
+    const burgerPrice = burgerLists[i].childNodes[2].data;
+    sum += burgerCount * parsePriceToNumber(burgerPrice);
+  }
+  cartPrice.innerHTML = sum.toLocaleString();
 }
 function removeBurger(e) {
   // 선택한 버거 리스트, 수량, 가격 가져와서 가격 변경 후 li 자체를 삭제
   const burgerLi = e.target.parentNode;
-  const burgetCount = burgerLi.childNodes[1].value;
+  const burgerCount = burgerLi.childNodes[1].value;
   const burgerPrice = burgerLi.childNodes[2].data;
   cartPrice.innerHTML = (
     parsePriceToNumber(cartPrice.innerHTML) -
-    burgetCount * parsePriceToNumber(burgerPrice)
+    burgerCount * parsePriceToNumber(burgerPrice)
   ).toLocaleString();
   burgerLi.remove();
 }
