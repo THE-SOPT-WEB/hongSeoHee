@@ -155,4 +155,13 @@ function addCartList(e) {
 
 burgerCardList.forEach((burgerCard) => {
   burgerCard.addEventListener("click", addCartList);
+  // 애니메이션 클래스 명으로 추가
+  burgerCard.addEventListener("click", function (e) {
+    e.preventDefault;
+    const burgerCart = document.querySelector(".cart__content");
+    setTimeout(function () {
+      burgerCart.classList.add("swing");
+    }, 20);
+    burgerCart.classList.remove("swing");
+  });
 });
