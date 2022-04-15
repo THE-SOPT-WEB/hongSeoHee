@@ -134,6 +134,11 @@ li.burgerking {
   background-color: rgba(170, 177, 241, 0.966);
 }
 
+.swing {
+  animation-duration: 0.6s;
+  animation-name: swing;
+}
+
 /* media쿼리 */
 @media (min-width: 1110px) {
   aside#headerSideBar {
@@ -160,5 +165,27 @@ li.burgerking {
   article.burger__card {
     width: 95%;
     margin-left: 10%;
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-8deg);
+  }
+
+  50% {
+    transform: rotate(8deg);
+  }
+
+  75% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
   }
 }
