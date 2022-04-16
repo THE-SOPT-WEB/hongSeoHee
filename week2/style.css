@@ -9,6 +9,15 @@
   padding: 0;
   font-family: "waltDisney";
 }
+header {
+  width: 100%;
+  border-bottom: 1px solid white;
+  background: url("/week2/assets/디즈니세로.jpeg");
+}
+main {
+  background: url("/week2/assets/디즈니가로\ 배경.jpeg") center;
+  background-size: contain;
+}
 
 button {
   background-color: transparent;
@@ -36,7 +45,7 @@ header {
   text-align: center;
   color: white;
   padding: 5px 10px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   background-color: #8040ff;
 }
 
