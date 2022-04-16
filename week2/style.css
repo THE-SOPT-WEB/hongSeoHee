@@ -1,7 +1,13 @@
+@font-face {
+  font-family: "waltDisney";
+  src: url("../week2/assets/WaltDisney+Font.ttf");
+}
+@import url("https://fonts.googleapis.com/css2?family=Updock&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "waltDisney";
 }
 
 button {
