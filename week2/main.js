@@ -1,32 +1,28 @@
-import pic1 from "./assets/더키버니.jpeg";
-import pic2 from "./assets/덤퍼.jpeg";
-import pic3 from "./assets/라푼젤.jpeg";
-import pic4 from "./assets/바넬로피.jpeg";
-import pic5 from "./assets/브루니.jpeg";
-
 const $ = (selector) => document.querySelector(selector);
-
+const answerList = $(".answer__list");
+console.log(answerList);
+// console.log("gg");
 let currentStep = 0;
 
 const quizList = [
   {
-    src: pic1,
+    src: "./assets/더키버니.jpeg",
     answer: "Ducky & Bunny",
   },
   {
-    src: pic2,
+    src: "./assets/덤퍼.jpeg",
     answer: "Thumper",
   },
   {
-    src: pic3,
+    src: "./assets/라푼젤.jpeg",
     answer: "Rapunzel",
   },
   {
-    src: pic4,
+    src: "./assets/바넬로피.jpeg",
     answer: "Vanellope",
   },
   {
-    src: pic5,
+    src: "./assets/브루니.jpeg",
     answer: "Bruni",
   },
 ];
