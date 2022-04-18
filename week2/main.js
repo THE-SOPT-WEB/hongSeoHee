@@ -34,6 +34,10 @@ function initGame({ score, image }) {
   score.innerText = 0;
   currentStep = 0;
   image.src = quizList[currentStep].src;
+  // 이미지 로딩중
+  image.addEventListener("error", () => {
+    showModal("Loading....");
+  });
 }
 // 정답 모달 보여주기
 function showModal(modalContent) {
@@ -42,9 +46,13 @@ function showModal(modalContent) {
   modalBody.innerText = modalContent;
   modal.classList.remove("hide");
 
+  $("body").addEventListener("click", (e) => {
+    e.target.classList.add("hide");
+  });
+
   setTimeout(() => {
     modal.classList.add("hide");
-  }, 1000);
+  }, 3000);
 }
 // 다음 단계 넘어가기
 function goNextStep(score, image) {
