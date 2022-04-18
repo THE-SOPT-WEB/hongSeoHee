@@ -1,14 +1,13 @@
-let burgerCardList = document.querySelectorAll(".burger__card");
-let cartPrice = document.querySelector(".cart__price");
-let cartList = document.querySelector(".cart__list");
+const $ = (query) => document.querySelector(query);
 
-// localStorage.clear();
-console.log(localStorage.getItem("burgerCart"));
+let cartPrice = $(".cart__price");
+let cartList = $(".cart__list");
+
 const parsePriceToNumber = (price) => {
   const removedComma = price.replace(/\D/g, "");
   return +removedComma;
 };
-if (localStorage.getItem("burgerCart")) initBurgerCart();
+
 function initBurgerCart() {
   const currentStorage = JSON.parse(localStorage.getItem("burgerCart"));
   const burgerList = currentStorage.burger;
@@ -94,7 +93,12 @@ function removeBurger(e) {
     currentStorage.price
   );
 }
-
+// 버거 모두 삭제
+function removeAllBurger() {
+  localStorage.clear();
+  cartList.innerHTML = "";
+  cartPrice.innerHTML = "0";
+}
 function addCartList(e) {
   const selectBurgerCard = e.currentTarget.querySelector(".burger__content");
   const burgerInfo = {
@@ -152,16 +156,46 @@ function addCartList(e) {
     parsePriceToNumber(cartPrice.innerHTML)
   ).toLocaleString();
 }
+// 모달 보여주기
+function showModal(modalContent) {
+  const modal = $(".modal");
+  const modalBody = $(".modal__title");
+  const modalCancelButton = $(".modal__cancel");
 
-burgerCardList.forEach((burgerCard) => {
-  burgerCard.addEventListener("click", addCartList);
-  // 애니메이션 클래스 명으로 추가
-  burgerCard.addEventListener("click", function (e) {
-    e.preventDefault;
-    const burgerCart = document.querySelector(".cart__content");
-    setTimeout(function () {
-      burgerCart.classList.add("swing");
-    }, 20);
-    burgerCart.classList.remove("swing");
+  modalBody.innerHTML = modalContent;
+  modal.classList.remove("hide");
+  modalCancelButton.addEventListener("click", () => {
+    modal.classList.add("hide");
   });
-});
+}
+// 이벤트 부착
+function attachEvent({ burgerCardList, orderButton, cancelButton }) {
+  burgerCardList.forEach((burgerCard) => {
+    burgerCard.addEventListener("click", addCartList);
+    // 애니메이션 클래스 명으로 추가
+    burgerCard.addEventListener("click", function (e) {
+      e.preventDefault;
+      const burgerCart = document.querySelector(".cart__content");
+      setTimeout(function () {
+        burgerCart.classList.add("swing");
+      }, 10);
+      burgerCart.classList.remove("swing");
+    });
+  });
+  orderButton.addEventListener("click", () =>
+    showModal("정말 주문하시겠어요?")
+  );
+  cancelButton.addEventListener("click", removeAllBurger);
+}
+// 버거 카트 매니저
+function burgerCartManger(burgerCartInfo) {
+  attachEvent(burgerCartInfo);
+}
+window.onload = () => {
+  if (localStorage.getItem("burgerCart")) initBurgerCart();
+  burgerCartManger({
+    burgerCardList: document.querySelectorAll(".burger__card"),
+    orderButton: $(".order"),
+    cancelButton: $(".cancel"),
+  });
+};
