@@ -5,7 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="mc.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOPT_WEB_SEOHEE</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+ <link rel="stylesheet" href="./css/modal.css"/>
   </head>
   <body>
     <aside class="sideBar" id="headerSideBar">
@@ -221,12 +222,19 @@
             <span class="cart__price">0</span>
           </div>
           <div class="cart__button">
-            <button id="order">주문하기</button>
-            <button id="cancel">취소하기</button>
+            <button class="order">주문하기</button>
+            <button class="cancel">취소하기</button>
           </div>
         </div>
       </aside>
     </main>
+    <div class="modal hide">
+      <div class="modal__content">
+        <p class="modal__title"></p>
+        <a href="./orederComplete.html">예</a>
+        <button class="modal__cancel">아니오</button>
+      </div>
+    </div>
   </body>
   <script src="main.js"></script>
 </html>
