@@ -73,6 +73,10 @@ function clickEvent({ score, answer, image }) {
 function gameManger(gameInfo) {
   initGame(gameInfo);
   clickEvent(gameInfo);
+  const resetButton = $(".buttonList__reset");
+  resetButton.addEventListener("click", () => {
+    initGame(gameInfo);
+  });
 }
 window.onload = () => {
   gameManger({
