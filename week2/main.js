@@ -31,11 +31,9 @@ const quizList = [
 ];
 // 게임 초기화
 function initGame({ score, image }) {
-  console.log(score);
-  console.log(image);
   image.src = quizList[currentStep].src;
 }
-// 정답 했을때 함수
+// 정답 모달 보여주기
 function showModal(modalContent) {
   const modal = $(".modal");
   const modalBody = $(".modal__body");
@@ -44,11 +42,17 @@ function showModal(modalContent) {
 
   setTimeout(() => {
     modal.classList.add("hide");
-  }, 3000);
+  }, 1000);
 }
-// 오류 클릭했을 때 함수
+// 다음 단계 넘어가기
+function goNextStep(score, image) {
+  score.innerText = +score.innerText + 1;
+  currentStep += 1;
+  if (currentStep === 5) currentStep = 0;
+  image.src = quizList[currentStep].src;
+}
 // 클릭 이벤트 함수
-function clickEvent({ answer }) {
+function clickEvent({ score, answer, image }) {
   answer.addEventListener("click", (e) => {
     if (e.target instanceof HTMLLIElement) {
       const clickAnswer = e.target.innerText;
@@ -56,8 +60,9 @@ function clickEvent({ answer }) {
 
       if (clickAnswer === currentAnswer) {
         showModal(quizList[currentStep].modalContent);
+        goNextStep(score, image);
       } else {
-        console.log("오류");/
+        console.log("오류");
       }
     }
   });
