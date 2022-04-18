@@ -64,7 +64,7 @@ function clickEvent({ score, answer, image }) {
         showModal(quizList[currentStep].modalContent);
         goNextStep(score, image);
       } else {
-        console.log("오류");
+        showModal(`🔥 I'm not a ${clickAnswer} 🔥 `);
       }
     }
   });
