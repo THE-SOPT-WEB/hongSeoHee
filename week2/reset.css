@@ -105,6 +105,7 @@ hgroup,
 main,
 menu,
 nav,
+div,
 section {
   box-sizing: border-box;
   margin: 0;
