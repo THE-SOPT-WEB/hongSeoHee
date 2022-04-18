@@ -31,6 +31,8 @@ const quizList = [
 ];
 // 게임 초기화
 function initGame({ score, image }) {
+  score.innerText = 0;
+  currentStep = 0;
   image.src = quizList[currentStep].src;
 }
 // 정답 모달 보여주기
