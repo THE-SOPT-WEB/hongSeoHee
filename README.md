@@ -3,3 +3,4 @@
 |주차|과제 내용|🔗 링크|
 |------|---|---|
 |1주차|🍔 햄식이를 도와줘 🍔|[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/3)|
+|2주차| 🏰 Who Is This Character? 🏰 |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/4)|
