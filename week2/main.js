@@ -41,11 +41,15 @@ function initGame({ score, image }) {
   });
 }
 // 정답 모달 보여주기
-function showModal(modalContent) {
+function showModal(modalContent, isAllCorrect) {
   const modal = $(".modal");
   const modalBody = $(".modal__body");
-  modalBody.innerText = modalContent;
+  modalBody.innerHTML = modalContent;
   modal.classList.remove("hide");
+  console.log(isAllCorrect, "과연1");
+
+  if (isAllCorrect) return;
+  console.log(isAllCorrect, "과연2");
 
   $("body").addEventListener("click", (e) => {
     e.target.classList.add("hide");
@@ -53,13 +57,21 @@ function showModal(modalContent) {
 
   setTimeout(() => {
     modal.classList.add("hide");
-  }, 3000);
+  }, 2000);
 }
 // 다음 단계 넘어가기
 function goNextStep(score, image) {
   score.innerText = +score.innerText + 1;
   currentStep += 1;
-  if (currentStep === 5) currentStep = 0;
+  if (currentStep === quizList.length) {
+    currentStep = 0;
+    score.innerText = 0;
+    showModal(
+      `<a href="/week2/index.html">❄️ You have passed all the quizzes ❄️</a>`,
+      true
+    );
+    return;
+  }
   image.src = quizList[currentStep].src;
 
   const scoreBoard = $(".scoreBoard");
