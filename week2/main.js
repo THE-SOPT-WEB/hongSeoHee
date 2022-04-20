@@ -46,10 +46,8 @@ function showModal(modalContent, isAllCorrect) {
   const modalBody = $(".modal__body");
   modalBody.innerHTML = modalContent;
   modal.classList.remove("hide");
-  console.log(isAllCorrect, "과연1");
 
   if (isAllCorrect) return;
-  console.log(isAllCorrect, "과연2");
 
   $("body").addEventListener("click", (e) => {
     e.target.classList.add("hide");
