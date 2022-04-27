@@ -25,7 +25,7 @@ const ContentTitle = styled.h2`
   ${({ theme }) => {
     return css`
       position: absolute;
-      top: 80%;
+      top: 85%;
       left: 50%;
       transform: translateX(-50%);
 
@@ -37,5 +37,22 @@ const ContentTitle = styled.h2`
     `;
   }}
 `;
-const styledComponents = { WorldCupDiv, ContentImg, ContentTitle };
+
+const VersusDiv = styled.div`
+  ${({ theme }) => {
+    return css`
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      font-family: ${theme.fonts.family};
+      font-size: 100px;
+      color: ${theme.colors.title};
+      text-shadow: 2px 1px 1px #000;
+      z-index: 1;
+    `;
+  }}
+`;
+const styledComponents = { WorldCupDiv, ContentImg, ContentTitle, VersusDiv };
 export default styledComponents;
