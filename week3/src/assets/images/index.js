@@ -8,6 +8,13 @@ import image7 from "./옴팡이.gif";
 import image8 from "./찌미.gif";
 import image9 from "./호두두.gif";
 import image10 from "./푸루와배코.gif";
+import image11 from "./머멍이.gif";
+import image12 from "./서달이.gif";
+import image13 from "./찹쌀하마.gif";
+import image14 from "./춘식이.gif";
+import image15 from "./포실토끼.gif";
+import image16 from "./햄떡이.gif";
+
 export const emoticonItems = [
   {
     name: "망상토끼",
@@ -46,7 +53,31 @@ export const emoticonItems = [
     url: image9,
   },
   {
-    name: "푸루와 배코",
+    name: "푸루",
     url: image10,
+  },
+  {
+    name: "머멍이",
+    url: image11,
+  },
+  {
+    name: "서달이",
+    url: image12,
+  },
+  {
+    name: "찹쌀하마",
+    url: image13,
+  },
+  {
+    name: "춘식이",
+    url: image14,
+  },
+  {
+    name: "포실토끼",
+    url: image15,
+  },
+  {
+    name: "햄떡이",
+    url: image16,
   },
 ];
