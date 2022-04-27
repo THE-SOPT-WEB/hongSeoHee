@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Who Is This?</title>
+  </head>
+  <body>
+    <header>
+      <h1>Walt Disney</h1>
+    </header>
+    <main>
+      <section class="scoreBoard">
+        <span class="scoreBoard__score">0</span>
+        <span>POINT</span>
+      </section>
+      <div class="imageBoard">
+        <img src="" alt="who is this?" />
+      </div>
+      <div class="answer">
+        <header class="answer__title">
+          <h2>Who Is This Character?</h2>
+        </header>
+        <ul class="answer__list">
+          <li>Vanellope</li>
+          <li>Thumper</li>
+          <li>Ducky & Bunny</li>
+          <li>Bruni</li>
+          <li>Rapunzel</li>
+        </ul>
+      </div>
+      <div class="buttonList">
+        <button class="buttonList__reset">Do It Again</button>
+      </div>
+    </main>
+    <div class="modal hide">
+      <div class="modal__content">
+        <p class="modal__body"></p>
+      </div>
+    </div>
+    <script type="module" src="/week2/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "waltDisney";
+}
+header {
+  width: 100%;
+  background: url("/week2/assets/디즈니세로.jpeg");
+}
+main {
+  height: 100vh;
+  background: url("/week2/assets/디즈니가로\ 배경.jpeg") center;
+  background-size: contain;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  background-color: #bc9bfd;
+  padding: 10px;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+hr {
+  width: 100%;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+header {
+  padding: 10px;
+  background-color: #8040ff;
+  color: white;
+  text-align: center;
+}
+
+header > h1 {
+  font-size: 35px;
+}
+
+header > h2 {
+  font-size: 25px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.scoreBoard {
+  width: 100%;
+  padding: 10px;
+
+  background-color: #bc9bfd;
+  color: white;
+
+  font-size: 20px;
+  text-align: center;
+}
+
+section.scoreBoard.getScore {
+  animation: neon 1s ease infinite;
+}
+
+div.imageBoard {
+  display: flex;
+  align-items: center;
+  height: 350px;
+  padding: 15px;
+}
+
+div.imageBoard > img {
+  width: 100%;
+  max-height: 100%;
+  border: 1px solid #8040ff;
+  border-radius: 18px;
+}
+
+.modal.hide {
+  display: none;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: fit-content;
+  padding: 15px;
+
+  background-color: rgb(253, 255, 157);
+  border-radius: 18px;
+
+  transform: translate(-50%, -50%);
+  font-family: "Merriweather", serif;
+  font-size: 20px;
+}
+
+.answer > header {
+  border-radius: 18px;
+}
+
+.answer__list {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0px;
+  padding: 0;
+}
+
+.answer__list > li {
+  list-style: none;
+
+  width: fit-content;
+  padding: 10px;
+
+  background-color: white;
+  border-radius: 34px;
+  color: #2e0d8b;
+  font-size: 20px;
+}
+
+.buttonList {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.buttonList > button {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16,
+      0 0 10vw #fa1c16, 0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
+    color: #fed128;
+  }
+  50% {
+    text-shadow: 0 0 0.5vw #800e0b, 0 0 1.5vw #800e0b, 0 0 5vw #800e0b,
+      0 0 5vw #800e0b, 0 0 0.2vw #800e0b, 0.5vw 0.5vw 0.1vw #40340a;
+    color: #806914;
+  }
+}
