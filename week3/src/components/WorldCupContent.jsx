@@ -13,12 +13,23 @@ const WorldCupContent = () => {
     setEmoticons(emoticonItems);
     setDisplays([emoticonItems[0], emoticonItems[1]]);
   }, []);
+  const clickHandler = (emoticon) => (event) => {
+    if (emoticons.length > 2) {
+      setWinners([...winners, emoticon]);
+      setDisplays([emoticonItems[2], emoticonItems[3]]);
+      setEmoticons(emoticons.slice(2));
+    }
+  };
 
   return (
     <WorldCupDiv>
       {displays.map((display) => {
         return (
-          <ContentImg key={display.name} imgUrl={display.url}>
+          <ContentImg
+            key={display.name}
+            imgUrl={display.url}
+            onClick={clickHandler(display)}
+          >
             <ContentTitle key={display.name}>{display.name}</ContentTitle>
           </ContentImg>
         );
