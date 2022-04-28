@@ -6,6 +6,7 @@ import "../styles/App.css";
 import Header from "./Header";
 import IntroContent from "./IntroContent";
 import WorldCupContent from "./WorldCupContent";
+import ResultContent from "./ResultContent";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<IntroContent />} />
           <Route path="/worldCup" element={<WorldCupContent />} />
+          <Route path="/result" element={<ResultContent />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
