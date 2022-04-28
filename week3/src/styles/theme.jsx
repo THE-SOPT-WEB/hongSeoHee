@@ -7,7 +7,7 @@ const fonts = {
 const colors = {
   yellow: "#FFE266",
   title: "#EED330",
-  headerFont: "#5E2F1A",
+  brown: "#5E2F1A",
 };
 
 export const theme = {

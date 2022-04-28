@@ -9,7 +9,7 @@ const CustomHeader = styled.div`
       background-color: ${theme.colors.yellow};
       font-family: ${theme.fonts.family};
       font-size: ${theme.fonts.size.header};
-      color: ${theme.colors.headerFont};
+      color: ${theme.colors.brown};
     `;
   }}
 `;
