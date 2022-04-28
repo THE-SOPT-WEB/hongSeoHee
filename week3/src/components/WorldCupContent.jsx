@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import styledComponents from "../styles/WorldCupContent-style";
-import { emoticonItems } from "../assets/images";
-const { WorldCupDiv, ContentImg, ContentTitle, VersusDiv } = styledComponents;
+import { useNavigate } from "react-router";
+import styledComponents from "../styles/Content-style";
+import { emoticonItems } from "../assets/images/";
+const { ContentWrapper, ContentImg, ContentName, VersusDiv } = styledComponents;
 
 const WorldCupContent = () => {
+  const navigate = useNavigate();
   const [emoticons, setEmoticons] = useState([]);
   const [displays, setDisplays] = useState([]);
   const [winners, setWinners] = useState([]);
@@ -14,15 +16,27 @@ const WorldCupContent = () => {
     setDisplays([emoticonItems[0], emoticonItems[1]]);
   }, []);
   const clickHandler = (emoticon) => (event) => {
+    console.log(emoticons);
+
     if (emoticons.length > 2) {
       setWinners([...winners, emoticon]);
-      setDisplays([emoticonItems[2], emoticonItems[3]]);
+      setDisplays([emoticons[2], emoticons[3]]);
       setEmoticons(emoticons.slice(2));
+    } else {
+      if (winners.length === 0) {
+        setDisplays([emoticon]);
+        navigate("/result", { state: emoticon });
+      } else {
+        const nextStepEmoticon = [...winners, emoticon];
+        setEmoticons(nextStepEmoticon);
+        setDisplays([nextStepEmoticon[0], nextStepEmoticon[1]]);
+        setWinners([]);
+      }
     }
   };
 
   return (
-    <WorldCupDiv>
+    <ContentWrapper>
       {displays.map((display) => {
         return (
           <ContentImg
@@ -30,12 +44,12 @@ const WorldCupContent = () => {
             imgUrl={display.url}
             onClick={clickHandler(display)}
           >
-            <ContentTitle key={display.name}>{display.name}</ContentTitle>
+            <ContentName key={display.name}>{display.name}</ContentName>
           </ContentImg>
         );
       })}
       <VersusDiv>VS</VersusDiv>
-    </WorldCupDiv>
+    </ContentWrapper>
   );
 };
 export default WorldCupContent;
