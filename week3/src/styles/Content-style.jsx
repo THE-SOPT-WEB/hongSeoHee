@@ -28,6 +28,7 @@ const ContentImg = styled.div`
   background-size: contain;
 `;
 const FirecrackerImg = styled(ContentImg)`
+  width: 50%;
   background-position: ${(props) => props.postion};
 `;
 const ContentName = styled.h2`
@@ -45,8 +46,15 @@ const ContentName = styled.h2`
     `;
   }}
 `;
+const ResultTitle = styled(ContentName)`
+  top: 18%;
+  font-size: 80px;
+  font-style: normal;
+  z-index: 1;
+`;
 const ResultName = styled(ContentName)`
-  top: 70%;
+  top: 83%;
+  font-size: 80px;
   font-style: normal;
 `;
 const GameButton = styled.div`
@@ -58,7 +66,7 @@ const GameButton = styled.div`
       background-color: ${theme.colors.yellow};
       border-radius: 40px;
       font-family: ${theme.fonts.family};
-      font-size: 100px;
+      font-size: 60px;
       color: ${theme.colors.brown};
       text-shadow: 2px 1px 1px #000;
     `;
@@ -87,6 +95,7 @@ const styledComponents = {
   ContentImg,
   FirecrackerImg,
   ContentName,
+  ResultTitle,
   ResultName,
   GameButton,
   VersusDiv,
