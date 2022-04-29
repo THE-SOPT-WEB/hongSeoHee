@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const CustomHeader = styled.div`
+const CustomHeader = styled.span`
   ${({ theme }) => {
     return css`
       display: flex;
@@ -13,6 +13,16 @@ const CustomHeader = styled.div`
     `;
   }}
 `;
-
-const styledComponents = { CustomHeader };
+const WorldCupContentHeader = styled(CustomHeader)`
+  ${({ theme }) => {
+    return css`
+      padding: 1rem;
+      font-size: ${theme.fonts.size.round};
+    `;
+  }}
+`;
+const styledComponents = {
+  CustomHeader,
+  WorldCupContentHeader,
+};
 export default styledComponents;

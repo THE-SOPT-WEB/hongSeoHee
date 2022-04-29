@@ -2,6 +2,7 @@ const fonts = {
   family: "Jua",
   size: {
     header: "3rem",
+    round: "2rem",
   },
 };
 const colors = {

@@ -12,6 +12,7 @@ const WorldCupContent = () => {
   const [displays, setDisplays] = useState([]);
   const [winners, setWinners] = useState([]);
   const [round, setRound] = useState([1, 8]);
+  const [title, setTitle] = useState("대결");
 
   useEffect(() => {
     emoticonItems.sort(() => Math.random() - 0.5);
@@ -34,13 +35,15 @@ const WorldCupContent = () => {
         setDisplays([nextStepEmoticon[0], nextStepEmoticon[1]]);
         setWinners([]);
         setRound([1, round[1] / 2]);
+        if (round[1] / 2 === 2) setTitle("준결승");
+        if (round[1] / 2 === 1) setTitle("결승");
       }
     }
   };
 
   return (
     <>
-      <RoundHeader round={round}></RoundHeader>
+      <RoundHeader title={title} round={round}></RoundHeader>
       <ContentWrapper>
         {displays.map((display) => {
           return (
