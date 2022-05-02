@@ -5,3 +5,4 @@
 |1주차|🍔 햄식이를 도와줘 🍔|[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/3)|
 |2주차| 🏰 Who Is This Character? 🏰 |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/4)|
 |2주차|🛒 햄식이의 장바구니 🛒  |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/5)|
+| 3주차|💖 꺄아ㅏㅏ너므 귀여워 💖|[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/6)|
