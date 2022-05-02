@@ -6,6 +6,7 @@ import rightFirecracker from "../assets/images/right.jpg";
 import styledComponents from "../styles/Content-style";
 const {
   ResultWrapper,
+  ButtonWrapper,
   ResultTitle,
   FirecrackerImg,
   ContentWrapper,
@@ -18,6 +19,7 @@ const ResultContent = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
   const handleClick = () => navigate("/worldCup");
+  const homeClick = () => navigate("/");
   return (
     <>
       <ResultWrapper>
@@ -36,7 +38,10 @@ const ResultContent = () => {
             postion={"80%"}
           ></FirecrackerImg>
         </ContentWrapper>
-        <GameButton onClick={handleClick}>GAME AGAIN</GameButton>
+        <ButtonWrapper>
+          <GameButton onClick={handleClick}>GAME AGAIN</GameButton>
+          <GameButton onClick={homeClick}>HOME</GameButton>
+        </ButtonWrapper>
       </ResultWrapper>
     </>
   );

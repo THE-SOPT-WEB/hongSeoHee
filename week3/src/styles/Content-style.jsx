@@ -4,6 +4,7 @@ const imageClick = keyframes`
     transform: scale(0.8);
   }
 `;
+
 const ContentWrapper = styled.div`
   ${({ theme }) => {
     return css`
@@ -19,9 +20,19 @@ const ContentWrapper = styled.div`
     animation: ${imageClick} 0.4s infinite linear alternate;
   }
 `;
-
-const ResultWrapper = styled(ContentWrapper)`
+const IntroWrapper = styled(ContentWrapper)`
   flex-direction: column;
+  margin: 10px;
+`;
+const ResultWrapper = styled(ContentWrapper)`
+  height: 80vh;
+  flex-direction: column;
+`;
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 const ContentImg = styled.div`
   position: relative;
@@ -72,6 +83,8 @@ const GameButton = styled.div`
       margin: 20px;
       background-color: ${theme.colors.yellow};
       border-radius: 40px;
+      box-shadow: 2px 2px 2px ${theme.colors.darkYellow};
+
       font-family: ${theme.fonts.family};
       font-size: 60px;
       color: ${theme.colors.brown};
@@ -99,7 +112,9 @@ const VersusDiv = styled.div`
 
 const styledComponents = {
   ContentWrapper,
+  IntroWrapper,
   ResultWrapper,
+  ButtonWrapper,
   ContentImg,
   FirecrackerImg,
   ContentName,
