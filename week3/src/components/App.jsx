@@ -7,14 +7,13 @@ import WorldCupHeader from "./WorldCupHeader";
 import IntroContent from "./IntroContent";
 import WorldCupContent from "./WorldCupContent";
 import ResultContent from "./ResultContent";
-
-const { TitleHeader } = WorldCupHeader;
+const { MainHeader } = WorldCupHeader;
 function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <TitleHeader></TitleHeader>
+        <MainHeader />
         <Routes>
           <Route path="/" element={<IntroContent />} />
           <Route path="/worldCup" element={<WorldCupContent />} />
