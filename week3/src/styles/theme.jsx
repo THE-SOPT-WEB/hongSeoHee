@@ -7,6 +7,7 @@ const fonts = {
 };
 const colors = {
   yellow: "#FFE266",
+  darkYellow: "#daa520",
   title: "#EED330",
   brown: "#5E2F1A",
 };
