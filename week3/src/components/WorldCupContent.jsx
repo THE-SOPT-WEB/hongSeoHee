@@ -20,7 +20,6 @@ const WorldCupContent = () => {
     setDisplays([emoticonItems[0], emoticonItems[1]]);
   }, []);
   const clickHandler = (emoticon) => (event) => {
-    console.log(event.target.classList);
     event.target.classList.add("imageClick");
     setTimeout(() => {
       event.target.classList.remove("imageClick");
