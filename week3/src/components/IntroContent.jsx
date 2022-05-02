@@ -7,6 +7,7 @@ const { IntroWrapper, ContentImg, GameButton } = styledComponents;
 const IntroContent = () => {
   const navigate = useNavigate();
   const handleClick = () => navigate("/worldCup");
+  console.log(mainImageUrl);
   return (
     <IntroWrapper>
       <ContentImg imgUrl={mainImageUrl} />

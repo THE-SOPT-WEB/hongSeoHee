@@ -15,7 +15,7 @@ function App() {
         <GlobalStyle />
         <MainHeader />
         <Routes>
-          <Route path="/" element={<IntroContent />} />
+          <Route path="/hongSeohee" element={<IntroContent />} />
           <Route path="/worldCup" element={<WorldCupContent />} />
           <Route path="/result" element={<ResultContent />} />
         </Routes>
