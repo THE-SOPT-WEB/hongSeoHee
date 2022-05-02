@@ -1,5 +1,9 @@
-import styled, { css } from "styled-components";
-
+import styled, { css, keyframes } from "styled-components";
+const imageClick = keyframes`
+ 50% {
+    transform: scale(0.8);
+  }
+`;
 const ContentWrapper = styled.div`
   ${({ theme }) => {
     return css`
@@ -11,6 +15,9 @@ const ContentWrapper = styled.div`
       overflow: hidden;
     `;
   }}
+  .imageClick {
+    animation: ${imageClick} 0.4s infinite linear alternate;
+  }
 `;
 
 const ResultWrapper = styled(ContentWrapper)`
@@ -89,6 +96,7 @@ const VersusDiv = styled.div`
     `;
   }}
 `;
+
 const styledComponents = {
   ContentWrapper,
   ResultWrapper,

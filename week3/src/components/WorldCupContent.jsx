@@ -20,25 +20,30 @@ const WorldCupContent = () => {
     setDisplays([emoticonItems[0], emoticonItems[1]]);
   }, []);
   const clickHandler = (emoticon) => (event) => {
-    if (emoticons.length > 2) {
-      setWinners([...winners, emoticon]);
-      setDisplays([emoticons[2], emoticons[3]]);
-      setEmoticons(emoticons.slice(2));
-      setRound([round[0] + 1, round[1]]);
-    } else {
-      if (winners.length === 0) {
-        setDisplays([emoticon]);
-        navigate("/result", { state: emoticon });
+    console.log(event.target.classList);
+    event.target.classList.add("imageClick");
+    setTimeout(() => {
+      event.target.classList.remove("imageClick");
+      if (emoticons.length > 2) {
+        setWinners([...winners, emoticon]);
+        setDisplays([emoticons[2], emoticons[3]]);
+        setEmoticons(emoticons.slice(2));
+        setRound([round[0] + 1, round[1]]);
       } else {
-        const nextStepEmoticon = [...winners, emoticon];
-        setEmoticons(nextStepEmoticon);
-        setDisplays([nextStepEmoticon[0], nextStepEmoticon[1]]);
-        setWinners([]);
-        setRound([1, round[1] / 2]);
-        if (round[1] / 2 === 2) setTitle("준결승");
-        if (round[1] / 2 === 1) setTitle("결승");
+        if (winners.length === 0) {
+          setDisplays([emoticon]);
+          navigate("/result", { state: emoticon });
+        } else {
+          const nextStepEmoticon = [...winners, emoticon];
+          setEmoticons(nextStepEmoticon);
+          setDisplays([nextStepEmoticon[0], nextStepEmoticon[1]]);
+          setWinners([]);
+          setRound([1, round[1] / 2]);
+          if (round[1] / 2 === 2) setTitle("준결승");
+          if (round[1] / 2 === 1) setTitle("결승");
+        }
       }
-    }
+    }, 2000);
   };
 
   return (
