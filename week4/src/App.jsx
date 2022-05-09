@@ -1,7 +1,14 @@
+import Main from 'pages/Main';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from 'styles/globalStyle';
+import { theme } from 'styles/theme';
 function App() {
   return (
     <>
-      <p>ㄹㅎㅎㅎ{'dsadas'}</p>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Main />
+      </ThemeProvider>
     </>
   );
 }
