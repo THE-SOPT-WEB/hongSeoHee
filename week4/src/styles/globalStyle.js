@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+
+import backBread from '../assets/images/backBread.png';
+
 const GlobalStyle = createGlobalStyle`
 @font-face { 
     font-family: 'LotteMartHappy'; 
@@ -10,14 +13,18 @@ const GlobalStyle = createGlobalStyle`
 ${reset}
 #root, body, html {
     width: 100%;
-    height: 100%;
+    height: auto;
     font-family: 'LotteMartHappy';
-
+background: url(${backBread});
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
 }
 * {
-    margin: 10%;
-    padding: 10%;
+   
     box-sizing: border-box;
+     font-family: 'LotteMartHappy';
+
     }
 `;
 
