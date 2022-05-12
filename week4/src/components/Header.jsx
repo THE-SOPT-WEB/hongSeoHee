@@ -19,11 +19,17 @@ function Header(props) {
   };
 
   const handleMyLocation = () => {};
-  const handleInputDisabled = () => {};
+
+  const handleInputDisabled = () => {
+    const searchInput = searchRef.current;
+    searchInput.disabled = !searchInput.disabled;
+    setIsLocation(prev => !prev);
+  };
+
   const handleInputChange = e => {
     setInput(e.target.value);
   };
-  const handleSumbit = e => {};
+  const handleSearchButton = e => {};
   return (
     <HeaderContainer>
       <h1>🍰 빵수니가 져아 🍰 </h1>
@@ -39,7 +45,7 @@ function Header(props) {
           value={input}
           placeholder="지역을 입력해주세요"
         />
-        <SearchButton choice={handleIsSearch} type="submit" onClick={handleSumbit}>
+        <SearchButton choice={handleIsSearch} onClick={handleSearchButton}>
           검색
         </SearchButton>
       </HeaderWrapper>
