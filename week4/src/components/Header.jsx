@@ -54,7 +54,18 @@ function Header(props) {
   const handleInputChange = e => {
     setInput(e.target.value);
   };
-  const handleSearchButton = e => {};
+  const handleSearchButton = e => {
+    handleIsSearch(true);
+    e.preventDefault();
+    if (!searchRef.current.disabled) {
+      const params = {
+        query: input + ' ' + '베이커리',
+      };
+      storeSearchHttpHandler(params);
+    } else {
+      handleMyLocation();
+    }
+  };
   return (
     <HeaderContainer>
       <h1>🍰 빵수니가 져아 🍰 </h1>
