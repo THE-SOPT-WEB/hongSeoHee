@@ -11,7 +11,12 @@ function Header(props) {
   const [input, setInput] = useState('');
   const [isLocation, setIsLocation] = useState(false);
 
-  const storeSearchHttpHandler = async params => {};
+  const storeSearchHttpHandler = async params => {
+    const { data } = await storeSearch(params);
+
+    handleIsSearch(false);
+    handleResults(data.documents);
+  };
 
   const handleMyLocation = () => {};
   const handleInputDisabled = () => {};
