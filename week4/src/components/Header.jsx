@@ -18,7 +18,32 @@ function Header(props) {
     handleResults(data.documents);
   };
 
-  const handleMyLocation = () => {};
+  const handleMyLocation = () => {
+    if (!position.current) {
+      new Promise((resolve, rejected) => {
+        navigator.geolocation.getCurrentPosition(resolve, rejected);
+      }).then(res => {
+        position.current = res.coords;
+        const params = {
+          y: position.current.latitude,
+          x: position.current.longitude,
+
+          radius: 1000,
+          query: '베이커리',
+        };
+        storeSearchHttpHandler(params);
+      });
+    } else {
+      const params = {
+        y: position.current.latitude,
+        x: position.current.longitude,
+
+        radius: 1000,
+        query: '베이커리',
+      };
+      storeSearchHttpHandler(params);
+    }
+  };
 
   const handleInputDisabled = () => {
     const searchInput = searchRef.current;
