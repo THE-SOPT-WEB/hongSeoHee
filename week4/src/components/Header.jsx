@@ -81,7 +81,7 @@ function Header(props) {
           value={input}
           placeholder="지역을 입력해주세요"
         />
-        <SearchButton choice={handleIsSearch} onClick={handleSearchButton}>
+        <SearchButton choice={handleIsSearch} type="submit" onSubmit={handleSearchButton}>
           검색
         </SearchButton>
       </HeaderWrapper>
