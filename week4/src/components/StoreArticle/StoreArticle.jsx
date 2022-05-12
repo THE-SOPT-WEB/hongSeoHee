@@ -8,7 +8,7 @@ const StoreArticle = props => {
       <a className="placeName" href={props.placeUrl} target="_blank" rel="noreferrer">
         {props.placeName}
       </a>
-      <p className="roadAddressName">{props.roadAddressName}</p>
+      <p className="roadAddressName">{props.distance ? props.distance : props.roadAddressName}</p>
       <p className="phone">{props.phone ? props.phone : '❌ 전화번호 ❌'}</p>
     </StyledArticle>
   );
