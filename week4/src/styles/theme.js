@@ -16,3 +16,4 @@ export const theme = {
     lightYellow: '#f3e7aa',
   },
 };
+export type Theme = typeof theme;
