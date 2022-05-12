@@ -10,7 +10,9 @@ export const theme = {
   colors: {
     main: '#e92328',
     white: '#ffffff',
+    header: '#f2d0ae',
     brown: '#5E2F1A',
+    skeleton: '#f2d0aa',
     lightYellow: '#f3e7aa',
   },
 };
