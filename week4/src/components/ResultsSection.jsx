@@ -12,7 +12,7 @@ function ResultsSection(props) {
       placeUrl={result.place_url}
       placeName={`🧁 ${result.place_name}🧁`}
       roadAddressName={result.road_address_name}
-      distance={`${result.distance}  m`}
+      distance={result.distance}
       phone={result.phone}
     />
   ));
