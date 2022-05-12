@@ -20,7 +20,9 @@ function Header(props) {
 
   const handleMyLocation = () => {};
   const handleInputDisabled = () => {};
-  const handleInputChange = e => {};
+  const handleInputChange = e => {
+    setInput(e.target.value);
+  };
   const handleSumbit = e => {};
   return (
     <HeaderContainer>
