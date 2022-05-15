@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "baseUrl": "src",
+    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "./src",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,8 +15,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "typeRoots": ["./node_modules/@types", "@types"]
+    "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["**/*.ts", "**/*.tsx", "src"],
+  "exclude": ["node_modules"]
 }
