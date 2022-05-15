@@ -1,9 +1,9 @@
-import SkeletonStoreArticle from 'components/StoreArticle/SkeletonStoreArticle';
-import StoreArticle from 'components/StoreArticle/StoreArticle';
-import { Result } from 'core/resultsType';
-import React from 'react';
+import SkeletonStoreArticle from "components/StoreArticle/SkeletonStoreArticle";
+import StoreArticle from "components/StoreArticle/StoreArticle";
+import { Result } from "core/resultsType";
+import React from "react";
 
-import { StyledArticle } from './StoreArticle/article-style';
+import { StArticle } from "./StoreArticle/article-style";
 
 interface ResultsSectionProps {
   isSearch: boolean;
@@ -20,10 +20,11 @@ function ResultsSection(props: ResultsSectionProps) {
         ))}
       </>
     );
-  if (results.length === 0) return <StyledArticle>❌ 빵집이 없다니ㅠㅠ ❌</StyledArticle>;
+  if (results.length === 0)
+    return <StArticle>❌ 빵집이 없다니ㅠㅠ ❌</StArticle>;
   return (
     <>
-      {results.map(result => (
+      {results.map((result) => (
         <StoreArticle
           key={result.id}
           placeUrl={result.place_url}

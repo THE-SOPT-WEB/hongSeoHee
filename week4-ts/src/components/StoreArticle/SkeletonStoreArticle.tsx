@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { StyledArticle } from './article-style';
+import { StArticle } from "./article-style";
 const SkeletonStoreArticle = () => {
   return (
-    <StyledArticle className="skeleton">
+    <StArticle className="skeleton">
       <p className="placeName skeleton name" />
       <p className="roadAddressName skeleton info" />
       <p className="phone skeleton info" />
-    </StyledArticle>
+    </StArticle>
   );
 };
 export default SkeletonStoreArticle;

@@ -1,5 +1,5 @@
-import { Params, Result, ResultsWithAPI } from 'core/resultsType';
-import { storeSearch } from 'libs/api';
+import { Params, Result } from 'core/resultsType';
+import { searchStore } from 'libs/api';
 import React, { useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -22,7 +22,7 @@ function Header(props: HeaderProps) {
   const [isLocation, setIsLocation] = useState<boolean>(false);
 
   const storeSearchHttpHandler = async (params: Params) => {
-    const { data } = await storeSearch(params);
+    const { data } = await searchStore(params);
 
     handleIsSearch(false);
     handleResults(data.documents);
@@ -30,8 +30,8 @@ function Header(props: HeaderProps) {
 
   const handleMyLocation = () => {
     if (!isLocation) {
-      new Promise(resolve => {
-        navigator.geolocation.getCurrentPosition(currentPosition => {
+      new Promise((resolve) => {
+        navigator.geolocation.getCurrentPosition((currentPosition) => {
           position.current = currentPosition.coords;
           const params = {
             y: position.current.latitude,
@@ -56,7 +56,7 @@ function Header(props: HeaderProps) {
   const handleInputDisabled = () => {
     if (null !== searchRef.current) {
       searchRef.current.disabled = !searchRef.current.disabled;
-      setIsLocation(prev => !prev);
+      setIsLocation((prev) => !prev);
     }
   };
 
@@ -78,32 +78,33 @@ function Header(props: HeaderProps) {
     }
   };
   return (
-    <HeaderContainer>
+    <StHeaderContainer>
       <h1>🍰 빵수니가 져아 🍰 </h1>
-      <HeaderWrapper>
-        <SearchButton isChoice={isLocation} onClick={handleInputDisabled}>
+      <StHeaderWrapper>
+        <StSearchButton isChoice={isLocation} onClick={handleInputDisabled}>
           현위치
-        </SearchButton>
-        <SearchLabel>우리 동네 </SearchLabel>
-        <SearchInput
+        </StSearchButton>
+        <StSearchLabel>우리 동네 </StSearchLabel>
+        <StSearchInput
           ref={searchRef}
           type="text"
           onChange={handleInputChange}
           value={input}
           placeholder="지역을 입력해주세요"
         />
-        <SearchButton isChoice={isLocation} type="submit" onClick={handleSearchButton}>
+        <StSearchButton isChoice={isLocation} type="submit" onClick={handleSearchButton}>
           검색
-        </SearchButton>
-      </HeaderWrapper>
-    </HeaderContainer>
+        </StSearchButton>
+      </StHeaderWrapper>
+    </StHeaderContainer>
   );
 }
 export default Header;
+
 interface StHeaderProps {
   isChoice: boolean;
 }
-const HeaderContainer = styled.header`
+const StHeaderContainer = styled.header`
   ${({ theme }) => {
     return css`
       display: flex;
@@ -118,7 +119,7 @@ const HeaderContainer = styled.header`
     `;
   }}
 `;
-const HeaderWrapper = styled.div`
+const StHeaderWrapper = styled.div`
   ${({ theme }) => {
     return css`
       display: flex;
@@ -130,7 +131,7 @@ const HeaderWrapper = styled.div`
     `;
   }}
 `;
-const SearchButton = styled.button`
+const StSearchButton = styled.button`
   ${({ theme }) => {
     return css`
       padding: 30px;
@@ -153,7 +154,7 @@ const SearchButton = styled.button`
     cursor: pointer;
   }
 `;
-const SearchLabel = styled.label`
+const StSearchLabel = styled.label`
   ${({ theme }) => {
     return css`
       padding: 30px;
@@ -166,7 +167,7 @@ const SearchLabel = styled.label`
     `;
   }}
 `;
-const SearchInput = styled.input`
+const StSearchInput = styled.input`
   ${({ theme }) => {
     return css`
       margin: 10px;

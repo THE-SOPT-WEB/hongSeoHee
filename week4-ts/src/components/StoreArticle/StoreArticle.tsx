@@ -1,23 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import { StyledArticle } from './article-style';
-interface StoreArticleProps {
+import { StArticle } from "./article-style";
+interface StArticleProps {
   placeUrl: string;
   placeName: string;
   distance: string;
   roadAddressName: string;
   phone: string;
 }
-function StoreArticle(props: StoreArticleProps) {
+function StoreArticle(props: StArticleProps) {
   const { placeUrl, placeName, distance, roadAddressName, phone } = props;
   return (
-    <StyledArticle>
+    <StArticle>
       <a className="placeName" href={placeUrl} target="_blank" rel="noreferrer">
         {placeName}
       </a>
-      <p className="roadAddressName">{distance ? `${distance}  m` : roadAddressName}</p>
-      <p className="phone">{phone ? phone : '❌ 전화번호 ❌'}</p>
-    </StyledArticle>
+      <p className="roadAddressName">
+        {distance ? `${distance}  m` : roadAddressName}
+      </p>
+      <p className="phone">{phone ? phone : "❌ 전화번호 ❌"}</p>
+    </StArticle>
   );
 }
 export default StoreArticle;

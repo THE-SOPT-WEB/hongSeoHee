@@ -1,6 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
-import resultBread from '../../assets/images/resultBread.png';
+import resultBread from "../../assets/images/resultBread.png";
 
 const loading = keyframes`
 0% {
@@ -12,7 +12,7 @@ const loading = keyframes`
   }
 `;
 
-export const StyledArticle = styled.article`
+export const StArticle = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +44,7 @@ export const StyledArticle = styled.article`
     color: ${({ theme }) => theme.colors.brown};
   }
   .skeleton::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
