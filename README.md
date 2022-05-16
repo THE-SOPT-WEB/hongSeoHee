@@ -7,3 +7,4 @@
 |2주차|🛒 햄식이의 장바구니 🛒  |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/5)|
 | 3주차|💖 꺄아ㅏㅏ너므 귀여워 💖|[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/6)|
 | 4주차| 🍰 빵수니가 져아 🍰|[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/7)|
+| 4주차|[ JS 👉 TS ] 🍰 빵수니가 져아 🍰 |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/8)|
