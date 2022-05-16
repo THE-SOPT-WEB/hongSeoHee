@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { StArticle } from "./article-style";
+import { StArticle } from './article-style';
 const SkeletonStoreArticle = () => {
   return (
     <StArticle className="skeleton">

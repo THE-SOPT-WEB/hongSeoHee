@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { StArticle } from "./article-style";
+import { StArticle } from './article-style';
 interface StArticleProps {
   placeUrl: string;
   placeName: string;
@@ -15,10 +15,8 @@ function StoreArticle(props: StArticleProps) {
       <a className="placeName" href={placeUrl} target="_blank" rel="noreferrer">
         {placeName}
       </a>
-      <p className="roadAddressName">
-        {distance ? `${distance}  m` : roadAddressName}
-      </p>
-      <p className="phone">{phone ? phone : "❌ 전화번호 ❌"}</p>
+      <p className="roadAddressName">{distance ? `${distance}  m` : roadAddressName}</p>
+      <p className="phone">{phone ? phone : '❌ 전화번호 ❌'}</p>
     </StArticle>
   );
 }
