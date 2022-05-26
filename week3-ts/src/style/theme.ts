@@ -2,10 +2,10 @@ import { css, DefaultTheme } from 'styled-components';
 
 const fonts = {
   header: css`
-    font-size: 3rem;
+    font-size: 6rem;
   `,
   round: css`
-    font-size: 2rem;
+    font-size: 4rem;
   `,
 };
 const colors = {
