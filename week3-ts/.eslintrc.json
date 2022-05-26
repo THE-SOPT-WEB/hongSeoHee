@@ -53,7 +53,25 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/no-unresolved": "off",
-    "import/no-duplicates": "error"
+    "import/no-duplicates": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", ["parent", "sibling"], "index"],
+        "pathGroups": [
+          {
+            "pattern": "angular",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
