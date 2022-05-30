@@ -11,8 +11,8 @@ export default function Header(props: HeaderProps) {
     <>
       <StHeader>💖 꺄아ㅏㅏ너므 귀여워 💖</StHeader>
       <StSubHeader>
-        {title !== undefined ? `${title}` : ''}
-        {round !== undefined ? ` ${round[0]}/${round[1]}` : ''}
+        {title && `${title}`}
+        {round && ` ${round[0]}/${round[1]}`}
       </StSubHeader>
     </>
   );
