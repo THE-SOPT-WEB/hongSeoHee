@@ -7,6 +7,7 @@ import mainImageUrl from '../../assets/images/메인옴팡이.gif';
 export default function IntroMain() {
   const navigate = useNavigate();
   const handleClick = () => navigate('/worldCup');
+  console.log(mainImageUrl);
   return (
     <StIntroWrapper>
       <StContentImg imgUrl={mainImageUrl} />
@@ -20,7 +21,7 @@ const StIntroWrapper = styled.main`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80%;
+  height: 80vh;
   margin: 1rem;
   overflow: hidden;
 `;
@@ -28,7 +29,6 @@ const StContentImg = styled.div<{ imgUrl: string }>`
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background: url(${(props) => props.imgUrl});
   background-size: 100% auto;
   background-repeat: no-repeat;

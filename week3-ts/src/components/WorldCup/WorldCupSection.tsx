@@ -19,28 +19,30 @@ export default function WorldCupSection(props: WorldCupSectionProps) {
   const navigate = useNavigate();
 
   const handleClickImage = (emoticon: EmoticonItem) => (event: React.MouseEvent<HTMLDivElement>) => {
-    const image = event.target as HTMLDivElement;
-    image.classList.add('imageClick');
+    if (event.target instanceof HTMLDivElement) {
+      const image = event.target;
+      image.classList.add('imageClick');
 
-    setTimeout(() => {
-      image.classList.remove('imageClick');
-      if (emoticons.length > 2) {
-        handleWinners([...winners, emoticon]);
-        handleEmoticons(emoticons.slice(2));
-        handleRound([round[0] + 1, round[1]]);
-      } else {
-        if (winners.length === 0) {
-          navigate('/result', { state: emoticon });
+      setTimeout(() => {
+        image.classList.remove('imageClick');
+        if (emoticons.length > 2) {
+          handleWinners([...winners, emoticon]);
+          handleEmoticons(emoticons.slice(2));
+          handleRound([round[0] + 1, round[1]]);
         } else {
-          const nextStepEmoticon = [...winners, emoticon];
-          handleEmoticons(nextStepEmoticon);
-          handleWinners([]);
-          handleRound([1, round[1] / 2]);
-          if (round[1] / 2 === 2) handleTitle('준결승');
-          if (round[1] / 2 === 1) handleTitle('결승');
+          if (winners.length === 0) {
+            navigate('/result', { state: emoticon });
+          } else {
+            const nextStepEmoticon = [...winners, emoticon];
+            handleEmoticons(nextStepEmoticon);
+            handleWinners([]);
+            handleRound([1, round[1] / 2]);
+            if (round[1] / 2 === 2) handleTitle('준결승');
+            if (round[1] / 2 === 1) handleTitle('결승');
+          }
         }
-      }
-    }, 1000);
+      }, 1000);
+    }
   };
   if (emoticons.length === 0) return <StWorldCupWrapper />;
   console.log(winners);
