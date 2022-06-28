@@ -9,3 +9,4 @@
 | 3주차| [ JS 👉 TS ] 💖 꺄아ㅏㅏ너므 귀여워 💖|[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/9)|
 | 4주차| 🍰 빵수니가 져아 🍰|[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/7)|
 | 4주차|[ JS 👉 TS ] 🍰 빵수니가 져아 🍰 |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/8)|
+| 7주차|[ TS ]  💜 WEB SECRET MAILBOX 💜  |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/10)|
