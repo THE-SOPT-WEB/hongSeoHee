@@ -10,3 +10,4 @@
 | 4주차| 🍰 빵수니가 져아 🍰|[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/7)|
 | 4주차|[ JS 👉 TS ] 🍰 빵수니가 져아 🍰 |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/8)|
 | 7주차|[ TS ]  💜 WEB SECRET MAILBOX 💜  |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/10)|
+| 8주차|[ TS ] 📄 Pagination 📄  |[링크](https://github.com/THE-SOPT-WEB/hongSeoHee/pull/11)|
